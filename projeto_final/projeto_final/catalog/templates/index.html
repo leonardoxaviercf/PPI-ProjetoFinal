@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Home</h1>
+  <p>
+    Bem-vindo ao site do elenco do time de futebol de campo do IFRN - campus Ceará-Mirim, desenvolvido por
+    <em>Ian e Xavier, alunos do 4º ano do técnico integrado em Informática</em>!
+  </p>
+  <h2>Dynamic content</h2>
+  <p>O site tem as seguintes abas:</p>
+  <ul>
+    <li><strong><a href="{% url 'jogadores' %}">Jogadores:</a></strong> {{ numeroDeJogadores }}</li>
+    <li><strong>Partidas:</strong> {{ numeroDePartidas }}</li>
+    <li><strong>Posições:</strong> {{ numeroDePosicoes }}</li>
+  </ul>
+  <p>
+    Você visitou esta página {{ numeroDeVisitas }}{% if numeroDeVisitas == 1 %} time{%
+    else %} times{% endif %} vezes.
+  </p>
+{% endblock %}

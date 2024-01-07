@@ -1,0 +1,11 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Partida: {{ partida.adversario }}</h1>
+
+  <p><strong>ID:</strong> {{ partida.id }}</p>
+  <p><strong>Local:</strong> {{ partida.local }}</p>>
+  <p><strong>Data:</strong> {{ partida.data }}</p>
+  <p><strong>Placar:</strong> {{ partida.placar }}</p>
+
+{% endblock %}

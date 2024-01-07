@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Treinador</h1>
+  {% if treinador_list %}
+  <ul>
+    {% for treinador in treinador_list %}
+      <li>
+        <a href="{{ treinador.get_absolute_url }}">{{ treinador.nome }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>Não há treinador no site.</p>
+  {% endif %}
+{% endblock %}

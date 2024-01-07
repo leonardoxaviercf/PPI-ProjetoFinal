@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Deletar Treinador</h1>
+
+  <p>Você tem certeza de que quer deletar o treinador: {{ treinador }}?</p>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Sim, deletar." />
+  </form>
+{% endblock %}
