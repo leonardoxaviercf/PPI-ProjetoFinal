@@ -2,15 +2,21 @@
 
 {% block content %}
   <h1>Partidas</h1>
+
   {% if partida_list %}
-  <ul>
-    {% for partida in partida_list %}
-      <li>
-        <a href="{{ partidas.get_absolute_url }}">{{ partida.adversario }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+    <ul class="partida-list">
+      {% for partida in partida_list %}
+        <li class="partida-item">
+          <p>
+            <strong>Adversário:</strong> {{ partida.adversario }}<br>
+            <strong>Placar:</strong> {{ partida.placar }}<br>
+            <strong>Local:</strong> {{ partida.local }}<br>
+            <strong>Data:</strong> {{ partida.dataHora }}
+          </p>
+        </li>
+      {% endfor %}
+    </ul>
   {% else %}
-    <p>Não há partidas no site</p>
+    <p class="no-partidas">Não há partidas no site</p>
   {% endif %}
 {% endblock %}

@@ -1,15 +1,23 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-  <h1>Lista de Jogadores</h1>
+  <h1>Conheça Nossos Jogadores</h1>
   {% if jogador_list %}
-  <ul>
-    {% for jogador in jogador_list %}
-      <li>
-        <a href="{{ jogador.get_absolute_url }}">{{ jogador.nome }}</a>
-    {% endfor %}
-  </ul>
+    <p>Aqui estão os talentosos jogadores que fazem parte do nosso time de futebol:</p>
+    <ul>
+      {% for jogador in jogador_list %}
+        <li>
+          <a href="{{ jogador.get_absolute_url }}">{{ jogador.nome }}</a>
+          {% if jogador.posicao %}
+            - {{ jogador.posicao }}
+          {% endif %}
+          {% if jogador.numero_camisa %}
+            (Camisa #{{ jogador.numero_camisa }})
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
   {% else %}
-    <p>Não há jogadores no site.</p>
+    <p>Infelizmente, ainda não temos jogadores cadastrados no site. Fique atento para futuras atualizações!</p>
   {% endif %}
 {% endblock %}

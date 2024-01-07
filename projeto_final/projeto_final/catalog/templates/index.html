@@ -1,20 +1,33 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-  <h1>Home</h1>
+  <h1>Bem-Vindo ao Site do Time de Futebol do IFRN - Campus Ceará-Mirim</h1>
   <p>
-    Bem-vindo ao site do elenco do time de futebol de campo do IFRN - campus Ceará-Mirim, desenvolvido por
-    <em>Ian e Xavier, alunos do 4º ano do técnico integrado em Informática</em>!
+    Seja muito bem-vindo ao site oficial do elenco do time de futebol de campo do Instituto Federal de Educação,
+    Ciência e Tecnologia do Rio Grande do Norte (IFRN) - campus Ceará-Mirim. Este site foi desenvolvido com entusiasmo
+    por Ian e Xavier, alunos do 4º ano do curso técnico integrado em Informática.
   </p>
-  <h2>Dynamic content</h2>
-  <p>O site tem as seguintes abas:</p>
-  <ul>
-    <li><strong><a href="{% url 'jogadores' %}">Jogadores:</a></strong> {{ numeroDeJogadores }}</li>
-    <li><strong>Partidas:</strong> {{ numeroDePartidas }}</li>
-    <li><strong>Posições:</strong> {{ numeroDePosicoes }}</li>
-  </ul>
+
+  <h2>Sobre Nós</h2>
   <p>
-    Você visitou esta página {{ numeroDeVisitas }}{% if numeroDeVisitas == 1 %} time{%
-    else %} times{% endif %} vezes.
+    Somos apaixonados pelo esporte e dedicamos nosso tempo e esforço para representar o IFRN nos campos de futebol.
+    Nossa equipe é composta por talentosos jogadores e treinadores comprometidos em alcançar a excelência esportiva.
+  </p>
+
+  <h2>Conteúdo Dinâmico</h2>
+  <p>
+    Explore as diversas abas do nosso site para obter informações atualizadas sobre o desempenho da nossa equipe.
+  </p>
+  <ul>
+    <li><strong>Jogadores:</strong> Contamos com um elenco de {{ numeroDeJogadores }} jogadores talentosos.</li>
+    <li><strong>Treinadores:</strong> Nossos {{ numeroDeTreinadores }} treinadores dedicados guiam nossa equipe para o sucesso.</li>
+    <li><strong>Partidas:</strong> Fique por dentro de todas as {{ numeroDePartidas }} partidas que disputamos.</li>
+  </ul>
+
+  <h2>Estatísticas de Visitas</h2>
+  <p>
+    Este site é o lugar perfeito para acompanhar o desempenho do nosso time, e estamos felizes em compartilhar nosso
+    entusiasmo com você. Até agora, você visitou esta página {{ numeroDeVisitas }}{% if numeroDeVisitas == 1 %} vez{%
+    else %} vezes{% endif %}. Agradecemos pelo seu apoio contínuo!
   </p>
 {% endblock %}

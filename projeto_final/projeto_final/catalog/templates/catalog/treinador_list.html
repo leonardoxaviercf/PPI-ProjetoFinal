@@ -1,16 +1,20 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-  <h1>Treinador</h1>
+  <h1>Conheça Nossos Treinadores</h1>
   {% if treinador_list %}
-  <ul>
-    {% for treinador in treinador_list %}
-      <li>
-        <a href="{{ treinador.get_absolute_url }}">{{ treinador.nome }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+    <p>Aqui estão os dedicados treinadores que lideram e inspiram nosso time:</p>
+    <ul>
+      {% for treinador in treinador_list %}
+        <li>
+          <a href="{{ treinador.get_absolute_url }}">{{ treinador.nome }}</a>
+          {% if treinador.experiencia %}
+            - Experiência: {{ treinador.experiencia }} anos
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
   {% else %}
-    <p>Não há treinador no site.</p>
+    <p>Infelizmente, ainda não temos treinadores cadastrados no site. Estamos trabalhando para trazer mais informações em breve!</p>
   {% endif %}
 {% endblock %}

@@ -1,9 +1,15 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-  <h1>Nome: {{ treinador.nome }}</h1>
+  <h1>{{ treinador.nome }}</h1>
 
-  <p><strong>Idade:</strong> {{ treinador.idade }}</p>
-  <p><strong>E-mail:</strong> {{ treinador.email }}</p> 
+  <p><strong>Informações do Treinador:</strong></p>
+  <ul>
+    <li><strong>Idade:</strong> {{ treinador.idade }}</li>
+    <li><strong>E-mail:</strong> {{ treinador.email }}</li>
+    <!-- Adicione mais detalhes sobre o treinador conforme necessário -->
+  </ul>
 
+  <!-- Exemplo de link para voltar à lista de treinadores -->
+  <p><a href="{% url 'treinador' %}">&laquo; Voltar para a Lista de Treinadores</a></p>
 {% endblock %}

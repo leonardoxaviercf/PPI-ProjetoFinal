@@ -1,10 +1,21 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-  <h1>Nome: {{ jogador.nome }}</h1>
+  <h1>{{ jogador.nome }}</h1>
 
-  <p><strong>Treinador:</strong> {{ jogador.treinador }}</p>
-  <p><strong>Posição:</strong> {% for posicao in jogador.posicao.all %} {{ posicao }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
-  <p><strong>Numero da camisa:</strong> {{ jogador.numeroDaCamisa }}</a></p> 
+  <p><strong>Informações do Jogador:</strong></p>
+  <ul>
+    <li><strong>Posição:</strong>
+      {% for posicao in jogador.posicao.all %}
+        {{ posicao }}{% if not forloop.last %}, {% endif %}
+      {% endfor %}
+    </li>
+    <li><strong>Numero da Camisa:</strong> {{ jogador.numeroDaCamisa }}</li>
+    <li><strong>Treinador:</strong> {{ jogador.treinador }}</li>
+  </ul>
 
+  <!-- Adicione mais detalhes sobre o jogador conforme necessário -->
+
+  <!-- Exemplo de link para voltar à lista de jogadores -->
+  <p><a href="{% url 'jogadores' %}">&laquo; Voltar para a Lista de Jogadores</a></p>
 {% endblock %}

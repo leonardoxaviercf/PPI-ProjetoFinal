@@ -29,7 +29,7 @@ class Partida(models.Model):
     placar=models.CharField(max_length=200, blank=True, help_text='Insira o placar da partida.')
 
     def __str__(self):
-        return self.nome
+        return self.id
 
     def get_absolute_url(self):
         return reverse('partida-detail', args=[str(self.id)])
